@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    function notaAlumno(nota) {
+      if (nota >= 0 && nota <= 3) {
+        return "muy deficiente";
+      } else if (nota == 4) {
+        return "insuficiente";
+      } else if (nota >= 5 && nota <= 6) {
+        return "suficiente";
+      } else if (nota >= 6 && nota < 7) {
+        return "bien";
+      } else if (nota >= 7 && nota <= 8) {
+        return "notable";
+      } else if (nota >= 8 && nota <= 10) {
+        return "sobresaliente";
+      } else {
+        return "Escriba un numero correcto";
+      }
+    }
+
+    function diceNotaFormulario() {
+      let nota = document.getElementById("nota").value;
+      let display = document.getElementById("display");
+      display.innerHTML = "<h1>" + notaAlumno(nota) + "</h1>";
+    }
+
+  </script>
+  nota: <input type="number" id="nota">
+  <button onclick="diceNotaFormulario()">Nota en texto</button>
+  <div id="display" style="border: 2px solid blue;"></div>
+
+</body>
+
+</html>
